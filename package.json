@@ -1,35 +1,45 @@
 {
   "name": "iobroker.megadd",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "Lets control the MegaD-2561 over ethernet (http://www.ab-log.ru/smart-house/ethernet/megad-2561) from ioBroker",
   "author": {
     "name": "ausHaus",
     "email": "teshaus@gmail.com"
   },
-  "homepage": "https://github.com/ausHaus/ioBroker.megadd",
+  "homepage": "https://github.com/iobroker-community-adapters/ioBroker.megadd",
   "keywords": [
     "ioBroker",
     "MegaD-2561"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ausHaus/ioBroker.megadd"
+    "url": "https://github.com/iobroker-community-adapters/ioBroker.megadd"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^1.0.3"
+    "@iobroker/adapter-core": "^2.4.0"
   },
   "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-replace": "^1.0.1",
-    "grunt-contrib-jshint": "^1.1.0",
-    "grunt-jscs": "^3.0.1",
-    "grunt-http": "^2.2.0",
-    "mocha": "^6.0.2",
-    "chai": "^4.1.2",
-    "keypress": "*"
+    "@alcalzone/release-script": "^1.8.1",
+    "@iobroker/testing": "^2.3.0",
+    "@types/chai": "^4.2.12",
+    "@types/chai-as-promised": "^7.1.3",
+    "@types/gulp": "^4.0.6",
+    "@types/mocha": "^8.0.3",
+    "@types/node": "^14.11.1",
+    "@types/proxyquire": "^1.3.28",
+    "@types/sinon": "^9.0.5",
+    "@types/sinon-chai": "^3.2.4",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^7.9.0",
+    "gulp": "^4.0.2",
+    "mocha": "^8.1.3",
+    "proxyquire": "^2.1.3",
+    "sinon": "^9.0.3",
+    "sinon-chai": "^3.5.0"
   },
   "bugs": {
-    "url": "https://github.com/ausHaus/ioBroker.megadd/issues"
+    "url": "https://github.com/iobroker-community-adapters/ioBroker.megadd/issues"
   },
   "main": "main.js",
   "scripts": {
