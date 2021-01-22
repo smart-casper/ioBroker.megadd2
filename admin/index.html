@@ -103,7 +103,7 @@
                 'NC',
                 'SDA',
                 'SCL'
-            ];   
+            ];
         }
         if (modes) {
             text += '<td class="tspace"><select class="tvalue" data-type="m" data-port="' + index + '">';
@@ -125,12 +125,12 @@
 
 
         text += '<td class="tspace">';
-        
+
         // misc P&R
         if (portSettings.pty == 0 && portSettings.m != 3) {
             text += _('Misc:') + ' <input type="checkbox" class="tvalue" data-type="misc" data-port="' + index + '" ' + (portSettings.misc   ? 'checked' : '') + '/>, ';
         }
-        
+
         if (portSettings.pty == 3 && portSettings.d == 6 && portSettings.m == 1) {
             text += _('D1:') + ' <input class="tvalue" data-type="misc" type="text" style="width: 30px" data-port="' + index + '" value="' + (portSettings.misc || '') + '" maxsize="2"/>, ';
         }
@@ -154,7 +154,7 @@
                 text += '</select>';
             } else if (portSettings.m == 1 || portSettings.m == 3) {
                 text += _('Default state:') + ' <input class="tvalue" data-type="d" type="text" data-port="' + index + '" value="' + (portSettings.d || 0) + '" size=4 maxsize="3"/>';
-            }   
+            }
         } else if (portSettings.pty == 0) {
             text += ', ' + _('De-bounce:') + ' <input type="checkbox" class="tvalue" data-type="d" data-port="' + index + '" ' + (portSettings.d   ? 'checked' : '') + '/>';
         }
@@ -183,12 +183,12 @@
             text += '<option value="6" ' + ((portSettings.d == 6) ? 'selected' : '') + '>W26</option>';
             text += '</select>';
         }
-        
+
         //Device list
         if (portSettings.pty == 3 && portSettings.d == 5) {
             text += ', ' + ' <button data-port="' + index + '" class="devicelist">Device List</button>' + ': ' + '<input class="ttvalue" type="text" data-type="dlist" data-port="' + index + '" value="' + (portSettings.dlist || '') + '" style="width: 250px"/>';
         }
-        
+
         //smooth
         if (portSettings.pty == 1 && portSettings.m == 1 && (index == 10 || index == 11 || index == 12 || index == 13 || index == 25  || index == 27  || index == 28)) {
             text += ', ' + _('Smooth:') + ' <input type="checkbox" class="tvalue" data-type="misc" data-port="' + index + '" ' + (portSettings.misc   ? 'checked' : '') + '/> ';
@@ -196,7 +196,7 @@
                 text += ' <input class="tvalue" data-type="m2" type="text"  style="width: 70px" data-port="' + index + '" value="' + (portSettings.m2 || 1) + '" maxsize="3"/>';
             }
         }
-        
+
         //freq
         if (portSettings.pty == 1 && portSettings.m == 1 && (index == 10 || index == 11 || index == 12 || index == 13 || index == 25  || index == 27  || index == 28)) {
             text += ', ' + _('Frequency:') + ' <select class="tvalue" data-type="fr" data-port="' + index + '">';
@@ -211,7 +211,7 @@
             text += ', ' + _('Threshold:') + ' <input class="tvalue" data-type="misc" type="text"  style="width: 70px" data-port="' + index + '" value="' + (portSettings.misc || 0) + '" maxsize="3"/>, ';
             text += _('Hysteresis:') + ' <input class="tvalue" data-type="hst" type="text"  style="width: 70px" data-port="' + index + '" value="' + (portSettings.hst || 0) + '" maxsize="3"/>';
         }
-        
+
         if (portSettings.pty == 2 || (portSettings.pty == 1 && portSettings.m == 1 && (index == 10 || index == 11 || index == 12 || index == 13 || index == 25  || index == 27|| index == 28))) {
             text += ', ' + _('Offset:') + ' <input class="tvalue" data-type="offset" type="text" data-port="' + index + '" style="width: 30px" value="' + (portSettings.offset || 0) + '"/>, ';
             text += _('Factor:') + ' <input class="tvalue" data-type="factor" type="text" data-port="' + index + '" style="width: 30px" value="' + (portSettings.factor || 1) + '"/>';
@@ -233,39 +233,39 @@
             text += '<option value="21" ' + ((portSettings.d == 21) ? 'selected' : '') + '>' + _('PCA9685')  + '</option>';
             text += '</select>';
         }
-        
+
         if (portSettings.pty == 4 && portSettings.m == 1 && portSettings.d == 4) {
             text += ', ' + _('Bright:') + ' <input class="tvalue" data-type="hst" type="text" style="width: 70px" data-port="' + index + '" value="' + (portSettings.hst || 127) + '" maxsize="3"/>';
             text += ', ' + _('Clock:') + ' <input type="checkbox" class="tvalue" data-type="clock" data-port="' + index + '" ' + (portSettings.clock ? 'checked' : '') + '/> ';
         }
-        
+
         if (portSettings.pty == 4 && portSettings.m == 1 && portSettings.d == 20) {
             text += ', ' + _('INT:') + ' <input class="tvalue" data-type="inta" type="text" style="width: 70px" data-port="' + index + '" value="' + (portSettings.inta || '') + '" maxsize="3"/>';
             text += ', ' + _('IN/OUT:') + ' <input class="tvalue" data-type="ext" type="text" style="width: 70px" data-port="' + index + '" value="' + (portSettings.ext || '') + '" maxsize="3"/>';
         }
-        
+
         if (portSettings.pty == 4 && portSettings.m == 1 && portSettings.d == 21) {
             text += ', ' + _('Frequency:') + ' <input class="tvalue" data-type="hst" type="text" style="width: 70px" data-port="' + index + '" value="' + (portSettings.hst || 24) + '" maxsize="4"/>';
         }
-        
+
         //I2C Scan
         if (portSettings.pty == 4 && portSettings.m == 1) {
             text += ', ' + ' <button data-port="' + index + '" class="i2cscan">I2C Scan</button>' + ': ' + '<input class="ttvalue" type="text" data-type="scan" data-port="' + index + '" value="' + (portSettings.scan || '') + '" style="width: 250px"/>';
         }
-        
+
         if (portSettings.pty == 0) {
             if (portSettings.m == 1 || portSettings.m == 3 || portSettings.misc == 1) {
                 text += ', ' + _('Long:') + ' <input type="checkbox" class="tvalue" data-type="long" data-port="' + index + '" ' + (portSettings.long   ? 'checked' : '') + '/>';
             }
             text += ', ' + _('Double:') + ' <input type="checkbox" class="tvalue" data-type="double" data-port="' + index + '" ' + (portSettings.double ? 'checked' : '') + '/>';
         }
-        
+
         // Displei
         if (portSettings.pty == 0 || portSettings.pty == 1 || (portSettings.pty == 3 && portSettings.d == 3)) {
             text += ', ' + _('Display:') + ' <input class="tvalue" data-type="disp" type="text" style="width: 30px" data-port="' + index + '" value="' + (portSettings.disp || '') + '" maxsize="2"/>';
         }
         text += '</td>';
-        
+
         text += '</tr>';
         return text;
     }
@@ -326,7 +326,7 @@
                 }
                 if (ports[index].m == 2) {
                     if (ports[index].d      !== undefined) delete ports[index].d;
-                }    
+                }
                 if (ports[index].misc == 1) {
                     ports[index].m2 = 1;
                 }
@@ -368,7 +368,7 @@
                     if (ports[index].hst    !== undefined) delete ports[index].hst;
                     if (ports[index].d != 6) {
                         if (ports[index].m      !== undefined) delete ports[index].m;
-                    }    
+                    }
                     if (ports[index].eth    !== undefined) delete ports[index].eth;
                     if (ports[index].af     !== undefined) delete ports[index].af;
                     if (ports[index].ecmd   !== undefined) delete ports[index].ecmd;
@@ -451,7 +451,7 @@
         onchange();
         showPorts();
     }
-    
+
     function deviceListt(index) {
         if (!active) {
             showMessage(_('Enable adapter first'), 'Warning', 'info');
@@ -467,7 +467,7 @@
         onchange();
         showPorts();
     }
-    
+
     function i2cScan(index) {
         if (!active) {
             showMessage(_('Enable adapter first'), 'Warning', 'info');
@@ -512,7 +512,7 @@
             }
             $(this).change(valueChanged);
         });
-        
+
         $('.ttvalue').each(function () {
             if ($(this).attr('type') == 'text') {
                 $(this).keyup(function () {
@@ -534,7 +534,7 @@
             icons: {primary: 'ui-icon-arrowthick-1-s'},
             text:  false
         }).css({width: 22, height: 22}).click(onDown);
-        
+
         $('.devicelist').button({
             icons: {primary: 'ui-icon-refresh'}
         }).click(function () {
@@ -557,7 +557,7 @@
                 }
             });
         }).css({'font-size': '0.7em'});
-        
+
         $('.i2cscan').button({
             icons: {primary: 'ui-icon-refresh'}
         }).click(function () {
@@ -643,7 +643,7 @@
         socket.emit('getState', 'system.adapter.' + adapter + '.' + instance + '.alive', function (err, state) {
             active = common.enabled || (state && state.val);
         });
-        
+
         $('#add').button({
             icons: {primary: 'ui-icon-plusthick'}
         }).click(function () {
@@ -1044,7 +1044,7 @@
 <!-- you have to put your config page in a div with id adapter-container -->
 <div id="adapter-container">
 
-    <table><tr><td><img src="megad.png"></td><td><h3 class="translate">MegaD-2561 adapter settings</h3></td></tr></table>
+    <table><tr><td><img src="megadd2.png"></td><td><h3 class="translate">MegaD-2561 adapter settings</h3></td></tr></table>
 
     <table>
         <tr><td class="translate" style="text-align: right">IP:</td><td>                    <input  class="value" id="ip"/></select></td>

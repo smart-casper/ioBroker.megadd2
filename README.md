@@ -1,24 +1,20 @@
-![Logo](admin/megad.png)
+![Logo](admin/megadd2.png)
 # ioBroker MegaD-2561 adapter
 
-[![NPM version](http://img.shields.io/npm/v/iobroker.megadd.svg)](https://www.npmjs.com/package/iobroker.megadd)
-[![Downloads](https://img.shields.io/npm/dm/iobroker.megadd.svg)](https://www.npmjs.com/package/iobroker.megadd)
+[![NPM version](http://img.shields.io/npm/v/iobroker.megadd2.svg)](https://www.npmjs.com/package/iobroker.megadd)
+[![Downloads](https://img.shields.io/npm/dm/iobroker.megadd2.svg)](https://www.npmjs.com/package/iobroker.megadd)
 
-[![NPM](https://nodei.co/npm/iobroker.megadd.png?downloads=true)](https://nodei.co/npm/iobroker.megadd/)
+[![NPM](https://nodei.co/npm/iobroker.megadd2.png?downloads=true)](https://nodei.co/npm/iobroker.megadd/)
 
 Lets control the [MegaD-2561](http://www.ab-log.ru/smart-house/ethernet/megad-2561) over ethernet.
 ## English 
 [по русски](#Русский)
 
-## Install
-
-```node iobroker.js add megadd```
-
 ### Information
 The device has 38 ports, inputs/outputs, DSen (DHT11, DHT22, DS18B20 in ports, 1WBUS, iButton (DS1990A, EM-Marine), Wiegand-26), I2C bus (HTU21D, BMP180, BH1750, TSL2591, SSD1306, MCP23008).
 To read the state of the port call
 ```http://mega_ip/sec/?pt=4&cmd=get``` , where sec is password (max 3 chars), 4 is port number
-The result will come as "ON", "OFF" or analog value for analog ports
+The result will come as 'ON', 'OFF' or analog value for analog ports
 
 To set the state call:
 ```http://megad_ip/sec/?cmd=2:1``` , where sec is password (max 3 chars), 2 is port number, and 1 is the value
@@ -30,14 +26,14 @@ The device can report the changes of ports to some web server in form
 ### Configuration
 
 - IP: IP address of MegaD-2561;
-- MegaD-2561 Name: Name of the MegaD-2561 to assign the port changes, e.g. "DevA". If no name set the adapter instance will be used for that;
+- MegaD-2561 Name: Name of the MegaD-2561 to assign the port changes, e.g. 'DevA'. If no name set the adapter instance will be used for that;
 - Port: Listening port on ioBroker. Default value: 80. 
 - Poll interval: poll interval in seconds. All configured input ports will be polled in defined interval;
-- Password: password to access the device (max 3 characters). Default value "sec";
+- Password: password to access the device (max 3 characters). Default value 'sec';
 
 MegaD-2561 can report about changes on some ports if configured. 
-You can configure something like that "http://ioBrokerIP/instance" on MegaD-2561 in "Net"-Field and MegaD-2561 will send reports like this one "http://ioBrokerIP/instance/?pt=7" to ioBroker. 
-That means the button on port 7 was pressed. ioBroker expects instance number (e.g. "0") or defined name of MegaD-2561 (e.g. "DevA"). The "Net" field will look like: "http://192.168.0.8/0/".
+You can configure something like that 'http://ioBrokerIP/instance` on MegaD-2561 in 'Net'-Field and MegaD-2561 will send reports like this one `http://ioBrokerIP/instance/?pt=7` to ioBroker. 
+That means the button on port 7 was pressed. ioBroker expects instance number (e.g. '0') or defined name of MegaD-2561 (e.g. 'DevA'). The 'Net' field will look like: `http://192.168.0.8/0/`.
 
 ### Ports
 All ports, that are desired to be used must be configured in right order. Following settings must be set for every port:
@@ -47,7 +43,7 @@ All ports, that are desired to be used must be configured in right order. Follow
 - Switch: Is the port can be ON or OFF (in this case value = TRUE) or just used to send the reports about button press (FALSE);
 - Digital: Analog or digital port. ioBroker expects analog ports with range from 0 to 255.
 - Offset: offset for the **analog** port.
-- Factor:  multiply factor for **anaolog** port.
+- Factor: the multiply factor for **analog** port.
 - Long press: detect long press on digital port (port have to be SWITCH type)
 - Double click ms: interval for detection of double click
 
@@ -72,26 +68,26 @@ To get the range of the analog value from 100 to 500 set the factor as 400 and o
 ### Настройки
 
 - IP Адрес устройства: IP адрес MegaD-2561;
-- MegaD Имя: Имя MegaD-2561 устройства для идентификации сообщений о смене состояния порта от MegaD-2561, например "DevA". Если имя не задано, то для этих целей будет использоватся номер инстанции драйвера.;
+- MegaD Имя: Имя MegaD-2561 устройства для идентификации сообщений о смене состояния порта от MegaD-2561, например 'DevA'. Если имя не задано, то для этих целей будет использоваться номер инстанции драйвера.;
 - ioBroker веб-порт: Порт на котором ioBroker разворачивает веб сервер для приёма сообщений от MegaD-2561. Значение по умолчанию: 80. 
-- Интервал опроса (сек): инетрвал опроса портов в секундах;
-- MegaD-2561 Пароль: пароль для доступа на MegaD-2561 (максимально 3 символа). Значение по умолчанию: "sec";
+- Интервал опроса (сек): интервал опроса портов в секундах;
+- MegaD-2561 Пароль: пароль для доступа на MegaD-2561 (максимально 3 символа). Значение по умолчанию: 'sec';
 - Интервал для длинного нажатия (мс): если отжатие после нажатия кнопки произошло позже указанного интервала, то сгенерируется длинное нажатие;
 - Интервал двойного нажатия (мс): если между нажатиями пройдет меньше указанного времени, то сгенерируется двойное нажатие;
 
-В сетевых настройках MegaD-2561 можно сконфигуририровать IP-адрес ioBroker. При каждом нажатии на кнопку MegaD-2561 сообщает ioBroker (restAPI) номер сработавшего входа. 
+В сетевых настройках MegaD-2561 можно сконфигурировать IP-адрес ioBroker. При каждом нажатии на кнопку MegaD-2561 сообщает ioBroker (restAPI) номер сработавшего входа. 
 
 Выглядит запрос примерно следующим образом:
 ´´´http://192.168.0.250/0/?pt=7´´´
 
 ### Порты
-Необходимо сконфигурироваь все порты, которые должны быть видимы в ioBorker. Для каждого порта необходимо настроить следующее:
+Необходимо сконфигурировать все порты, которые должны быть видимы в ioBroker. Для каждого порта необходимо настроить следующее:
 
-- Имя: имя порта. Исползуется в ioBroker для создание объектов;
+- Имя: имя порта. Используется в ioBroker для создание объектов;
 - Вход: является ли порт входом (true) или выходом(false);
 - Переключатель: Может ли порт быть в положениях ВКЛ и ВЫКЛ (в этом случае значение TRUE) или он просто используется для сигнализирования нажатия на кнопку (FALSE);
-- Цифровой: Цифровой или аналоговый порт. ioBroker ожидает значени с аналогового порта в промежутке от 0 до 255.
-- Множитель:  множитель для значения **аналогового** порта.
+- Цифровой: Цифровой или аналоговый порт. ioBroker ожидает значение с аналогового порта в промежутке от 0 до 255.
+- Множитель: множитель для значения **аналогового** порта.
 - Сдвиг: сдвиг для значения **аналогового** порта.
 - Длинное нажатие: если активировано, то порт будет генерировать событие "длинное нажатие" в объекте port_long (Порт должен быть цифровым и иметь тип "Переключатель")
 - Двойное нажатие: если активировано, то порт будет генерировать событие "double click" в объекте port_double
@@ -108,7 +104,7 @@ MegaЗначение = (ioBrokerЗначение - Сдвиг) / Множите�
 ioBrokerЗначение = MegaЗначение * Множитель + Сдвиг;
 ```
 
-Например, что бы получить интервал значений от 100 до 500 нужно установить сдиг 100 и множитель 400.
+Например, что бы получить интервал значений от 100 до 500 нужно установить сдвиг 100 и множитель 400.
 
 Только аналоговые порты принимают во внимание Множитель и Сдвиг.
 

@@ -1,19 +1,19 @@
 {
-  "name": "iobroker.megadd",
+  "name": "iobroker.megadd2",
   "version": "1.0.0",
   "description": "Lets control the MegaD-2561 over ethernet (http://www.ab-log.ru/smart-house/ethernet/megad-2561) from ioBroker",
   "author": {
     "name": "ausHaus",
     "email": "teshaus@gmail.com"
   },
-  "homepage": "https://github.com/iobroker-community-adapters/ioBroker.megadd",
+  "homepage": "https://github.com/iobroker-community-adapters/ioBroker.megadd2",
   "keywords": [
     "ioBroker",
     "MegaD-2561"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/iobroker-community-adapters/ioBroker.megadd"
+    "url": "https://github.com/iobroker-community-adapters/ioBroker.megadd2"
   },
   "dependencies": {
     "@iobroker/adapter-core": "^2.4.0"
@@ -39,7 +39,7 @@
     "sinon-chai": "^3.5.0"
   },
   "bugs": {
-    "url": "https://github.com/iobroker-community-adapters/ioBroker.megadd/issues"
+    "url": "https://github.com/iobroker-community-adapters/ioBroker.megadd2/issues"
   },
   "main": "main.js",
   "scripts": {

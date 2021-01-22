@@ -1,6 +1,6 @@
 {
   "common": {
-    "name": "megadd",
+    "name": "megadd2",
     "version": "1.0.0",
     "news": {
       "1.0.0": {
@@ -76,16 +76,16 @@
     "platform": "Javascript/Node.js",
     "mode": "daemon",
     "loglevel": "info",
-    "icon": "megad.png",
+    "icon": "megadd2.png",
     "messagebox": true,
     "compact": true,
-    "readme": "https://github.com/iobroker-community-adapters/ioBroker.megadd/blob/master/README.md",
+    "readme": "https://github.com/iobroker-community-adapters/ioBroker.megadd2/blob/master/README.md",
     "keywords": [
       "MegaD-2561",
       "communication"
     ],
     "enabled": true,
-    "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.megadd/master/admin/megad.png",
+    "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.megadd2/master/admin/megadd2.png",
     "type": "hardware",
     "localLink": "http://%native_ip%/%password%",
     "config": {
