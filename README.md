@@ -112,7 +112,7 @@ ioBrokerЗначение = MegaЗначение * Множитель + Сдви�
          
       
 ## Changelog
-### 1.0.0 (2021-01-22)
+### 1.0.1 (2021-01-23)
 * (bleufox) Refactoring and make compatible with js-controller 3.2.x
 
 ### 0.4.0 (2018-05-15)

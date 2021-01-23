@@ -1,6 +1,6 @@
 {
   "name": "iobroker.megadd2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lets control the MegaD-2561 over ethernet (http://www.ab-log.ru/smart-house/ethernet/megad-2561) from ioBroker",
   "author": {
     "name": "ausHaus",
@@ -43,7 +43,8 @@
   },
   "main": "main.js",
   "scripts": {
-    "test": "node node_modules/mocha/bin/mocha --exit"
+    "test": "node node_modules/mocha/bin/mocha --exit",
+    "release": "release-script"
   },
   "license": "MIT"
 }

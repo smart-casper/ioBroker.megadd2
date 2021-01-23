@@ -3725,7 +3725,6 @@ function main() {
     }
     syncObjects();
     adapter.subscribeStates('*');
-    processMessages(true);
 }
 
 // If started as allInOne mode => return function to create instance

@@ -1,9 +1,9 @@
 {
   "common": {
     "name": "megadd2",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "news": {
-      "1.0.0": {
+      "1.0.1": {
         "en": "Refactoring and make compatible with js-controller 3.2.x",
         "de": "Refactoring und Kompatibilität mit js-controller 3.2.x.",
         "ru": "Рефакторинг и совместимость с js-controller 3.2.x",
